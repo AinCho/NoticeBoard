@@ -1,0 +1,5 @@
+rootProject.name = 'board'
+include 'domain'
+include 'user'
+include 'noticeboard'
+
