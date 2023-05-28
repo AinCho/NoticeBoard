@@ -19,8 +19,6 @@ public class PostListService {
         Post post = postRepository.findById(form.getId())
                 .filter(pi -> pi.getId().equals(id))
                 .orElseThrow(() -> new MemberException(ErrorCode.NOT_FOUND_POST));
-        post.setTitle(form.getTitle());
-        post.setContent(form.getContent());
         return post;
     }
 

@@ -1,18 +1,14 @@
 package com.zerobase.noticeboard.domain.model;
 
 import com.zerobase.noticeboard.domain.post.AddPostForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Data
+@Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

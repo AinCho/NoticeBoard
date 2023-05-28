@@ -28,7 +28,7 @@ dependencies {
     implementation 'mysql:mysql-connector-java'
     implementation project(path: ':domain')
 
-    testImplementation 'com.h2database:h2'
+    implementation 'com.h2database:h2'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     compileOnly 'org.projectlombok:lombok'
