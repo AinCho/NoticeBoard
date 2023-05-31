@@ -3,8 +3,7 @@ package com.zerobase.noticeboard.service;
 import com.zerobase.noticeboard.domain.model.Post;
 import com.zerobase.noticeboard.domain.post.UpdatePostForm;
 import com.zerobase.noticeboard.domain.repository.PostRepository;
-import com.zerobase.noticeboard.exception.ErrorCode;
-import com.zerobase.noticeboard.exception.MemberException;
+import com.zerobase.noticeboard.exception.ErrorCode_b;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +17,7 @@ public class PostListService {
     public Post updatePost(Long id, UpdatePostForm form) {
         Post post = postRepository.findById(form.getId())
                 .filter(pi -> pi.getId().equals(id))
-                .orElseThrow(() -> new MemberException(ErrorCode.NOT_FOUND_POST));
+                .orElseThrow(() -> new MemberException(ErrorCode_b.NOT_FOUND_POST));
         return post;
     }
 
@@ -26,7 +25,7 @@ public class PostListService {
     public void deletePost(Long id) {
         Post post = postRepository.findById(id)
                 .filter(pi -> pi.getId().equals(id))
-                .orElseThrow(() -> new MemberException(ErrorCode.NOT_FOUND_POST));
+                .orElseThrow(() -> new MemberException(ErrorCode_b.NOT_FOUND_POST));
         postRepository.delete(post);
     }
 }

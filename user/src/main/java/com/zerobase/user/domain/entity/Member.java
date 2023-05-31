@@ -1,10 +1,7 @@
 package com.zerobase.user.domain.entity;
 
 import com.zerobase.user.domain.SignUpForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
 
 import javax.persistence.Column;
@@ -14,7 +11,8 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Locale;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,7 +36,6 @@ public class Member extends BaseEntity{
 
     public static Member from(SignUpForm form) {
         return Member.builder()
-                .id(form.getId())
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
                 .username(form.getUsername())
                 .password(form.getPassword())

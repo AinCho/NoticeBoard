@@ -1,12 +1,9 @@
 package com.zerobase.noticeboard.domain.model;
 
-import com.zerobase.noticeboard.domain.post.LprodVO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.h2.mvstore.Page;
 
-import java.util.List;
 
 @Data
 @NoArgsConstructor

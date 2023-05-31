@@ -2,8 +2,7 @@ package com.zerobase.noticeboard.service;
 
 import com.zerobase.noticeboard.domain.model.Post;
 import com.zerobase.noticeboard.domain.repository.PostRepository;
-import com.zerobase.noticeboard.exception.ErrorCode;
-import com.zerobase.noticeboard.exception.MemberException;
+import com.zerobase.noticeboard.exception.ErrorCode_b;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +20,12 @@ public class PostSearchService {
 
     public Post getByPostId(Long postId) {
         return postRepository.findPostById(postId)
-                .orElseThrow(() -> new MemberException(ErrorCode.NOT_FOUND_ID));
+                .orElseThrow(() -> new MemberException(ErrorCode_b.NOT_FOUND_ID));
     }
 
     public Post searchByCreatedDate(LocalDateTime createdAt) {
         return postRepository.findPostByCreatedAt(createdAt)
-                .orElseThrow(() -> new MemberException(ErrorCode.NOT_FOUND_POSTBYCREATEDAT));
+                .orElseThrow(() -> new MemberException(ErrorCode_b.NOT_FOUND_POSTBYCREATEDAT));
     }
 
     public Post searchByCommentCount(int commentCount) {
